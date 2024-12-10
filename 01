@@ -1,0 +1,69 @@
+rint("반가워요 파이썬")
+a=10
+print(a)
+print(type(a))
+a="반가워요"
+print(a)
+print(type(a))
+a=0.14
+print(a)
+print(type(a))
+# 주석 처리 compent" !!!!!!!!!!!!!!
+"""
+여러줄 주석처리 !!!!!!!!!!!!!!!!!!!!
+"""
+a="""
+여러줄이
+화면에
+    표시되는 그대로
+    출력됩니다.
+    """
+print(a)
+#사칙연산
+# *-+/
+# // 몫만 출력 !!!!!!!!!!!!!!!!!!!!!!!!
+print(3/4)
+print(3//4)
+print(3%4)
+# 비교연산  > < == != >= <=
+print(3>4)
+print(3!=4) # bool타입
+print(type(True))
+#논리연산 && || ! -> 기호 안쓰고  and or not 사용 !!!!!!!!!!!!!!!
+print(3>4 or 3==4)
+print(3==3 or 3>4)
+# 논리값 True False
+print('F')
+# 논리값으로 판정 할 수있는 값
+print(bool(0))
+print(bool(1))
+print(bool(-1))
+print(bool(" "))
+print(bool(""))
+# ++ -- <-이것은 없음 += -=는 있음
+a = "반가워요 %04d 또만나요 %.1f" %(10,3.5)  # 0X 몇자리정수 .Y 몇자리 소수점 !!!!!!!!!!!!!
+print(a)
+name="홍길동"
+print(f"{name}님안녕하세요")
+# 조건문
+if True:
+    print("참")
+elif False:
+    print("거짓")
+else:
+    print("나머지")
+while True:
+    score = input("당신의 성적을 입력하세요")
+    print()
+    #print(type(score))
+    if score=='q':
+        break
+    score = int(score)
+    if score>90:
+        print('A')
+    elif score>80:
+        print('B')
+    elif score>70:
+        print('C')
+    else:
+        pass
