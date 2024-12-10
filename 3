@@ -1,0 +1,41 @@
+# set { } 과 dict{ } 자료형
+# set 특징 - 중복데이터를 허용하지 않습니다. 인덱스번호가 없음 , 무순서
+test_set = {10,20,30,400,10,57,20,60,30}
+print(test_set)
+#print(test_set[0]) set은 인덱스번호가없기에 오류
+for data in test_set:
+    print(data)
+ll_list = [1,2,3,3,2,1]
+print(set(ll_list))
+# &교집합 |합집합 - 차집합 ^여집합
+l_set = {5,10,15,20,25,30}
+s_set = {5,15,25,35,45}
+print(l_set&s_set)
+print(l_set|s_set)
+print(l_set^s_set)
+l_set.update([10,11,12,13,14,15]) # data 한꺼번에 넣을때 중복값은 안들어감
+print(l_set)
+# dict 특징 - key 로 value를 인출, key (셋) value(리스트)
+d_dict = { "이름":"홍길동","나이":20,"주소":"서울","주소":"광주","주소1":"광주"}  #같은  key값은 뒤에만 출력 중복X !!!!!!!!!
+print(d_dict)
+print(d_dict["이름"])
+print(d_dict.keys())
+print(d_dict.values())
+for key in d_dict.keys():
+    print(key,"값",d_dict[key])
+print(d_dict.items()) # items 키값과 val값 같이 빼기
+for key , val in d_dict.items():
+    print(key,":",val)
+print(list(d_dict.keys()))
+print(list(d_dict.values()))
+k_list = list(d_dict.keys())
+v_list= list(d_dict.values())
+datas = zip(k_list,v_list)
+for key,val in datas:
+    print(key,"xx",val)
+com_dict = {"이름":["홍길동","이순신","강감찬"],"주소":["서울","부산","광주"]}
+for key,vlist in com_dict.items():
+    print(key,end=":") #기본값은 \n
+    for item in vlist:
+        print(item,end=",")
+        print()
