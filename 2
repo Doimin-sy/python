@@ -1,0 +1,80 @@
+# 자료구조  list 구조 = 배열 []  자료의 추가 변셩 삭제가능 !!!!!!!!!!!
+# 자료구조  tuple 구조 = 배열 () 기본자료구조 자료의추가변경 삭제 불가능 !!!!!!!!!!!!!
+test_list = [1,2,3,4,5]
+t_list = list()
+tt_list = []
+print(test_list[1])
+print(test_list[0])
+print(test_list[-1])
+print(test_list[-2])
+#슬라이싱 slice 리스틍의 일부분 출력 !!!!!!!!!!!
+print(test_list[0:3])
+print(test_list[:3]) # 0 생략 가능 :3 3번index까지 라서 4출력 x
+print(test_list[2:])
+print(test_list[3:-1])
+test_list[0] = "안녕"
+print(test_list)
+test_tuple = (1,2,3,4,5)
+t_tuple = (1,)
+# test_tuple[0] =10 변경 불가 오류
+print(test_tuple[1])
+print(test_tuple[1:4])
+two_tuple = [1,2,3],[4,5,6],[7,8,9]
+print(type(two_tuple))
+two_tuple[1][0] = "안녕" # Reference 주소가 안바뀌면 되기때문에 변경가능 !!!!!!!!!!!!!!!
+print(two_tuple[1][0])
+two_tuple[1].append(99)
+print(two_tuple)
+#two_tuple[1]=[4,7,8]
+a,b,c = 10,20,30 #파이썬은 언패킹이 지원된다 순서대로 !!!!!!!!!!!!!!
+b=40 #배열이 아니기때문에 수정가능
+print(b)
+d,e,f, = [10,20],[30,40],[50,60,70]
+print(d)
+print(e)
+print(f)
+h,_ = 10,20 #_ 안받는다 !!!!!!!!!!!!!
+print(h)
+print(_)
+#문자열
+test_str = "안녕하세요 반가운 김다능"
+print(test_str[3])
+print(test_str[2:-2])
+ll = [100,200,300,400,500]
+for item in ll:
+    print(item)
+test_range = range(10)
+print(list(test_range))
+print(len(ll)) #5
+for i in range(len(ll)):
+    print(ll[i])
+for ix,it in enumerate(ll): #index 부여해서 출력 !!!!!!!!!!!!!
+    print(ix,":",it)
+ll_list = [1,2,3]
+val = ll_list.pop()
+print(val)
+print(ll_list)
+ll_list.reverse()
+print(ll_list)
+ll_list.insert(1,100)
+print(ll_list)
+print("ㅎ2"*2)
+print(ll_list+[5,6,7])
+ll_list.extend([10,11,12])
+print(ll_list)
+print(ll_list.count(12))
+t_tup = 1,2,3
+# 삼항연산자 대신 사용하는 if문
+print(10 if True else 20) # True 전자출력
+print(20 if False else 30)# False 후자출력
+a =20
+b = 30 if a>20 else 50
+print(b)
+l_list = [1,2,3]
+res_list = [item+1 for item in l_list] #mapping
+print(res_list)
+l_test = [1,2,3,4,5,6,7,8,9]
+odd_list = [item for item in l_test if item%2==1]#filtering
+print(odd_list)
+even_list = [item for item in l_test if item%2!=1]
+print(even_list)
