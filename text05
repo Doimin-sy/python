@@ -1,0 +1,26 @@
+class Dog:  #Class에서 객체를 찍어냄
+    name=""
+
+d1 = Dog() #  Dog() 객체
+d1.name="핏불"
+d2 = Dog()
+d2.name="진도"
+d3 = Dog()
+d3.name="말티즈"
+print(d1.name)
+print(d2.name)
+print(d3.name)
+d4=d3
+d4.name="사나이"
+print(d3.name)
+class MyDog(Dog):  #Dog 은 MyDog의 부모 객체
+    pass
+md1 = MyDog()
+md2 = MyDog()
+md3 = MyDog()
+md1.name="초롱이" # Dog 의 부모객체 의 name을사용
+md2.name="말랑이"
+md3.name="귀요미"
+print(md1.name)
+print(md2.name)
+print(md3.name)
