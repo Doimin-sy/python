@@ -1,0 +1,51 @@
+# 함수
+def sum(a,b=20):  #기본값을 b=20이렇게 넣을수있다
+    c = a+b
+    return c
+
+print(sum(1,5))
+print(sum(3,-1)>2)
+print(sum(b=6,a=8))#파라미터를 지정해서 넣을수있다 파이썬은
+print(sum(5))
+# 튜플형 가변파라미터
+def myTest(*a,b=0):
+    print(a)
+    print(b)
+
+myTest(1,2,3,4,5)
+myTest(1,2,3,4,5,7,8,9,10,b=30)
+
+def varSum(*a):
+    sum = 0
+    for d in a:
+        sum+=d
+    return sum
+print("----------------")
+print(varSum(3,4,5))
+print(varSum(1,2,3,4,5))
+
+#딕서녀리형 파라미터
+def dictFun(**a):
+    print(a)
+    for key,val in a.items():
+        print(f"키{key}값 {val}")  #f는 변수로 사용하기위해서
+
+dictFun(name="홍길동",age=20,addr="서울")
+tlist = [1,3,5,7,9]
+ttlist = [d+1 for d in tlist]
+print(ttlist)
+def ss(d):
+    return d+1
+print(list(map(ss,tlist))) #위에 값을 매핑함수로
+ttlist = [d for d in tlist if d>5] #filtering
+print(ttlist)
+def fs(d):
+    return d>5 #참만 출력
+print(list(filter(fs,tlist))) #위에 값을 필터함수로
+#람다식 이름이 없는함수 파라키터와 리턴값만 존재
+print(list(map(lambda d:d+1 ,tlist)))
+print(list(filter(lambda d:d>5 ,tlist)))
+aaa = lambda x,y:x-y
+print(aaa(5,7))
+print(aaa(5,3))
+print((lambda x,y:x/y)(3,5))
