@@ -1,0 +1,65 @@
+"""class car:
+    #kind=""
+    def __init__(self):#self 객체 자신 super 는 부모객체
+        self.kind="" #위에 kind를 넣는거랑 같은 효과
+car1= car()
+car2= car()
+car1.kind="클래식카"
+car2.kind="스포츠카"
+print(car1.kind)
+print(car2.kind)
+"""
+class car:
+    #kind=""
+    def __init__(self,kind="알수없음"): #init은 생성자이다!!!!!!!!!!!!!!!!!!! 초기값을 주기위해
+        self.kind=kind #뒤kind 매개변수 kind임
+    def gogocar(self):
+        return "{0}형 차가 고고싱{1}".format(self.kind,10) # 0,1 index번호 순서를 넣어주기위해
+    def stopcar(self):
+        return self.kind+"{}형 차가 스탑팅".format(self.kind)
+    def handlecar(self,orient):
+        return f"{self.kind} 형 자동차가 {orient} 방향으로 진행"
+
+car1= car("클래스카")
+car2= car("스포츠카")
+print("{ff:1f} 숫자 {ss} 문자".format(ff=0.45,ss="홍길동"))
+print(r"은 줄바꿈입니다.\n")#raw r은 \\효과 문자그대로로 읽어줌
+print(car1.kind)
+print(car2.kind)
+class KiaCar(car):
+    def __init__(self,maker,kind="기아"):
+        super().__init__(kind)
+        self.maker = maker
+
+    def gogocar(self):  #나에게 있는 메소드는 내껄 먼저 쓴다 부모꺼 말구
+        return f"{self.maker} 메이커 {super().gogocar()}"
+    def special(self):
+        return f"{self.maker} 차의 특별한 회전주행기능 작동"
+kia1 =KiaCar("K5") # __init__(self,kind) kind값때문에 KiaCar 사용X 그래서 kind값 기본값 넣어줘야 사용가능
+print(kia1.kind)
+print(kia1.gogocar())
+print(kia1.handlecar("왼쪽"))
+print(kia1.stopcar())
+print(kia1.special())
+class HyunDai(car):
+    __myname="현대차야" #public 공개형, _상속관계에서만 접근가능 , __myname 하면 private 은닉
+    def __init__(self,maker,kind="현대"):
+        super().__init__(kind)
+        self.maker=maker
+    def gogocar(self):
+        return f"{self.maker} 메이커 {super().gogocar()}"
+    def stopcar(self):
+        return f"{self.maker} 메이커 {super().stopcar()}"
+    def getMyname(self,name):
+        if name=="소영":
+            return self.__myname
+        else :
+            return "묻지마 비밀이야"
+hd1 = HyunDai("소나타")
+hd2 = HyunDai("그랜져")
+print(hd1.gogocar())
+print(hd1.handlecar("우측"))
+print(hd1.stopcar())
+print(hd2.gogocar())
+print(hd2.stopcar())
+print(hd2.getMyname("소영")) #private 는 함수로만 받아서 사용가능
